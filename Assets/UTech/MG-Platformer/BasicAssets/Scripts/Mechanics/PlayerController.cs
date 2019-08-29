@@ -17,6 +17,7 @@ namespace Platformer.Mechanics
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
+        public PlayerPoints playerPoints;
 
         /// <summary>
         /// Max horizontal speed of the player.
@@ -49,6 +50,8 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+
+            playerPoints.tokens = 0;
         }
 
         protected override void Update()

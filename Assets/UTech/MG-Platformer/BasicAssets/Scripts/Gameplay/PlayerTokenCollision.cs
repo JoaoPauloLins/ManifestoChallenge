@@ -18,6 +18,7 @@ namespace Platformer.Gameplay
 
         public override void Execute()
         {
+            player.playerPoints.tokens += 1;
             AudioSource.PlayClipAtPoint(token.tokenCollectAudio, token.transform.position);
         }
     }

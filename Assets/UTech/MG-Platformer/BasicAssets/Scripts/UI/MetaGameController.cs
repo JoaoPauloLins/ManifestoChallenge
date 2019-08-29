@@ -32,6 +32,11 @@ namespace Platformer.UI
             _ToggleMainMenu(showMainCanvas);
         }
 
+        public void OnPauseButtonDown()
+        {
+            ToggleMainMenu(show: !showMainCanvas);
+        }
+
         /// <summary>
         /// Turn the main menu on or off.
         /// </summary>

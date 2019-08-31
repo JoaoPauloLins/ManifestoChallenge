@@ -44,7 +44,7 @@ namespace Platformer.Mechanics
 
         public Bounds Bounds => collider2d.bounds;
 
-        void Awake()
+        private void Awake()
         {
             health = GetComponent<Health>();
             audioSource = GetComponent<AudioSource>();
@@ -53,6 +53,12 @@ namespace Platformer.Mechanics
             animator = GetComponent<Animator>();
 
             playerPoints.tokens = 0;
+        }
+
+        private void OnDestroy()
+        {
+            CrossPlatformInputManager.UnRegisterVirtualAxis("Horizontal");
+            CrossPlatformInputManager.UnRegisterVirtualButton("Jump");
         }
 
         protected override void Update()
